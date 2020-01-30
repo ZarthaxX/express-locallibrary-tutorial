@@ -57,7 +57,13 @@ AuthorSchema
 AuthorSchema
 .virtual('date_of_death_formatted')
 .get(function () {
-  return ;
+  return moment(this.date_of_death).format('YYYY-MM-DD');
+});
+
+AuthorSchema
+.virtual('date_of_birth_formatted')
+.get(function () {
+  return moment(this.date_of_birth).format('YYYY-MM-DD');
 });
 
 //Export model
